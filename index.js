@@ -140,8 +140,10 @@ class SocketWrapper extends EventEmitter {
         if (this._writing || !this._socket || !this._outgoing)
             return;
 
-        if (this._socket.destroyed)
-            return this.detach();
+        if (this._socket.destroyed) {
+            this.detach();
+            return;
+        }
 
         if (!this._outgoing.length) {
             this.emit('flush');
