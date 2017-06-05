@@ -1,13 +1,9 @@
-/**
- * Socket messaging service
- * @module socket-wrapper
- */
 const EventEmitter = require('events');
 
 /**
  * Send and receive messages via socket
  */
-class Wrapper extends EventEmitter {
+class SocketWrapper extends EventEmitter {
     /**
      * Create instance
      * @param {object} [socket]         Socket to attach to
@@ -164,4 +160,4 @@ class Wrapper extends EventEmitter {
     }
 }
 
-module.exports = Wrapper;
+module.exports = SocketWrapper;
