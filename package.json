@@ -4,6 +4,10 @@
   "license": "MIT",
   "author": "Ross Basarevych <basarevych@gmail.com>",
   "description": "Send and receive separate messages via socket stream",
+  "keywords": [
+    "socket",
+    "message"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/basarevych/socket-wrapper.git"
