@@ -12,12 +12,12 @@ npm install --save socket-wrapper
 
 As you know TCP socket is a stream: order of bytes is guaranteed but there
 is no idea of messages just a stream of bytes. You can send several separate
-chunks of data and receive it on the other end with single read. Or you can
+chunks of data and receive it on the other end with a single read. Or you can
 send one big chunk of data but receive it with several reads.
 
 This class will allow you to send and receive distinct messages. The messages
-will not be combined or splitted. It is achieved by sending message size as
-UINT32 big endian integer before the actual data. Receiving side will read
+will not be combined or split. It is achieved by sending message size as
+UINT32 big-endian integer before the actual data. Receiving side will read
 first 4 bytes, convert it to the number of bytes and will be reading the
 stream until all the bytes are read.
 
@@ -26,7 +26,7 @@ const SocketWrapper = require('socket-wrapper');
 
 let wrapper = new SocketWrapper(socket); // feed it a nodejs tcp socket
 wrapper.on('receive', message => {
-    console.log(message.toString()) // receive the message as a Buffer
+  console.log(message.toString()) // receive the message as a Buffer
 });
 wrapper.send(Buffer.from('hello world')); // send any Buffer
 ```
@@ -42,7 +42,7 @@ will attach to
 
 Incoming buffer. Contains data received so far. When data is received from
 the socket 'read' event is fired and it is appended to this buffer for
-parsing messages. 
+parsing messages.
 
 When there is enough data to extract the message then 'receive' event will
 be fired and the buffer will be shortened by emitted data.
