@@ -1,6 +1,6 @@
 {
   "name": "socket-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Ross Basarevych <basarevych@gmail.com>",
   "description": "Send and receive separate messages via socket stream",
